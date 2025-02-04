@@ -96,5 +96,39 @@
         }
     });
     
+
+    // SIP Calculator function
+    function calculateSIP() {
+        // Get input values
+        const monthlyInvestment = parseFloat(document.getElementById('monthlyInvestment').value);
+        const timePeriod = parseFloat(document.getElementById('timePeriod').value);
+        const expectedReturn = parseFloat(document.getElementById('expectedReturn').value);
+
+        // Validate inputs
+        if (!monthlyInvestment || !timePeriod || !expectedReturn) {
+            alert('Please fill in all fields with valid numbers');
+            return;
+        }
+
+        // Calculate SIP returns
+        const monthlyRate = expectedReturn / (12 * 100);
+        const months = timePeriod * 12;
+        const totalInvestment = monthlyInvestment * months;
+
+        // Formula: FV = P × ((1 + r)^n - 1) / r × (1 + r)
+        const maturityAmount = totalInvestment * expectedReturn / 100;
+
+        const totalReturns = totalInvestment + maturityAmount;
+
+        // Display results
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('totalInvestment').textContent = 
+            '₹' + totalInvestment.toLocaleString('en-IN', {maximumFractionDigits: 0});
+        document.getElementById('maturityAmount').textContent = 
+            '₹' + totalReturns.toLocaleString('en-IN', {maximumFractionDigits: 0});
+        document.getElementById('totalReturns').textContent = 
+            '₹' + maturityAmount.toLocaleString('en-IN', {maximumFractionDigits: 0});
+    }
+    
 })(jQuery);
 

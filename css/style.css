@@ -435,3 +435,156 @@
     padding-right: 0;
     border-right: none;
 }
+
+/* Investment Packages Table Styling */
+#packages .table,
+#one-time-packages .table {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+#packages .table thead,
+#one-time-packages .table thead {
+    background: var(--primary);
+}
+
+#packages .table thead th,
+#one-time-packages .table thead th {
+    color: #fff;
+    font-weight: 600;
+    padding: 15px 20px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+#packages .table tbody tr,
+#one-time-packages .table tbody tr {
+    transition: all 0.3s ease;
+}
+
+#packages .table tbody tr:hover,
+#one-time-packages .table tbody tr:hover {
+    background-color: rgba(var(--primary-rgb), 0.1);
+    transform: scale(1.01);
+}
+
+#packages .table tbody td,
+#one-time-packages .table tbody td {
+    padding: 15px 20px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+#packages .table tbody tr:last-child td,
+#one-time-packages .table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Amount styling */
+#packages .table td:first-child,
+#packages .table td:nth-child(4),
+#packages .table td:last-child,
+#one-time-packages .table td:first-child,
+#one-time-packages .table td:nth-child(4),
+#one-time-packages .table td:last-child {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* ROI % styling */
+#packages .table td:nth-child(3),
+#one-time-packages .table td:nth-child(3) {
+    color: #28a745;
+    font-weight: 600;
+}
+
+/* Responsive table wrapper */
+#packages .table-responsive,
+#one-time-packages .table-responsive {
+    border-radius: 15px;
+    background: #fff;
+    padding: 5px;
+}
+
+/* Add animation for wow effect */
+#packages .table-responsive.fadeInUp {
+    animation-duration: 1s;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    #packages .table thead th,
+    #packages .table tbody td {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+}
+
+/* One Time Investment Table specific styles */
+#one-time-packages .table tbody tr:nth-child(even) {
+    background-color: rgba(var(--primary-rgb), 0.03);
+}
+
+#one-time-packages .table tbody tr:hover {
+    background-color: rgba(var(--primary-rgb), 0.1);
+    transform: scale(1.01);
+}
+
+/* Higher amount highlighting */
+#one-time-packages .table td:first-child {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* 3-year period highlighting */
+#one-time-packages .table td:nth-child(2):contains('3 Year') {
+    color: #2c5282;
+    font-weight: 600;
+}
+
+/* Higher ROI highlighting */
+#one-time-packages .table td:nth-child(3):contains('33%') {
+    color: #2b6cb0;
+    font-weight: 700;
+}
+
+/* Final amount highlighting */
+#one-time-packages .table td:last-child {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Investment Plan Tabs Styling */
+#packages .nav-pills {
+    gap: 10px;
+    margin-bottom: 30px !important;
+}
+
+#packages .nav-pills .nav-link {
+    padding: 10px 30px;
+    border-radius: 30px;
+    color: var(--primary);
+    background: transparent;
+    border: 2px solid var(--primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#packages .nav-pills .nav-link.active {
+    color: #fff;
+    background: var(--primary);
+}
+
+#packages .nav-pills .nav-link:hover:not(.active) {
+    background: rgba(var(--primary-rgb), 0.1);
+}
+
+#packages .tab-content {
+    padding: 20px 0;
+}
