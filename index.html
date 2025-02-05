@@ -46,9 +46,9 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 ">
                 <a href="#home" class="navbar-brand p-0">
-                    <h1 class="m-0">BizConsult</h1>
+                    <h1 class="m-0">Step Up Grow</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -493,8 +493,8 @@
                                     <div class="form-floating">
                                         <select class="form-select" id="enquiryType" required>
                                             <option value="" selected disabled>Select Enquiry Type</option>
-                                            <option value="package">Package Enquiry</option>
-                                            <option value="service">Service Enquiry</option>
+                                            <option value="package">Package Inquiry</option>
+                                            <option value="contact">Contact</option>
                                         </select>
                                         <label for="enquiryType">Enquiry Type</label>
                                     </div>
@@ -714,67 +714,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <!-- SIP Calculator Javascript -->
-    <script>
-        function calculateSIP() {
-            // Get input values
-            const monthlyInvestment = parseFloat(document.getElementById('monthlyInvestment').value);
-            const timePeriod = parseFloat(document.getElementById('timePeriod').value);
-            const expectedReturn = parseFloat(document.getElementById('expectedReturn').value);
-
-            // Validate inputs
-            if (!monthlyInvestment || !timePeriod || !expectedReturn) {
-                alert('Please fill in all fields with valid numbers');
-                return;
-            }
-
-            // Calculate SIP returns
-            const monthlyRate = expectedReturn / (12 * 100);
-            const months = timePeriod * 12;
-            const totalInvestment = monthlyInvestment * months;
-
-            // Formula: FV = P × ((1 + r)^n - 1) / r × (1 + r)
-            const maturityAmount = totalInvestment * expectedReturn / 100;
-
-            const totalReturns = totalInvestment + maturityAmount;
-
-            // Display results
-            document.getElementById('result').style.display = 'block';
-            document.getElementById('totalInvestment').textContent = 
-                '₹' + totalInvestment.toLocaleString('en-IN', {maximumFractionDigits: 0});
-            document.getElementById('maturityAmount').textContent = 
-                '₹' + totalReturns.toLocaleString('en-IN', {maximumFractionDigits: 0});
-            document.getElementById('totalReturns').textContent = 
-                '₹' + maturityAmount.toLocaleString('en-IN', {maximumFractionDigits: 0});
-        }
-
-        function calculateOneTime() {
-            // Get input values
-            const principalAmount = parseFloat(document.getElementById('principalAmount').value);
-            const onetimeTimePeriod = parseFloat(document.getElementById('onetimeTimePeriod').value);
-            const onetimeExpectedReturn = parseFloat(document.getElementById('onetimeExpectedReturn').value);
-
-            // Validate inputs
-            if (!principalAmount || !onetimeTimePeriod || !onetimeExpectedReturn) {
-                alert('Please fill in all fields with valid numbers');
-                return;
-            }
-
-            // Calculate one-time investment returns
-            const totalInvestment = principalAmount;
-            const totalReturns = totalInvestment + (totalInvestment * onetimeExpectedReturn / 100);
-            const maturityAmount = totalReturns;
-
-            // Display results
-            document.getElementById('onetimeResult').style.display = 'block';
-            document.getElementById('onetimeTotalInvestment').textContent = 
-                '₹' + totalInvestment.toLocaleString('en-IN', {maximumFractionDigits: 0});
-            document.getElementById('onetimeTotalReturns').textContent = 
-                '₹' + totalReturns.toLocaleString('en-IN', {maximumFractionDigits: 0});
-            document.getElementById('onetimeMaturityAmount').textContent = 
-                '₹' + maturityAmount.toLocaleString('en-IN', {maximumFractionDigits: 0});
-        }
-    </script>
 </body>
 
 </html>
