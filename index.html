@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -31,14 +32,39 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
     <!-- reCAPTCHA Script - Single Implementation -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdceM0qAAAAAHf7_AZ0x320y_pRqVAsaE7SmmII" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdceM0qAAAAAHf7_AZ0x320y_pRqVAsaE7SmmII" async
+        defer></script>
 </head>
 
 <body>
+     <!-- SVG Icons Definitions -->
+     <svg style="display: none;">
+        <!-- Clock Icon -->
+        <symbol id="icon-clock" viewBox="0 0 24 24">
+            <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z"/>
+        </symbol>
+
+        <!-- Chart Line Icon -->
+        <symbol id="icon-chart" viewBox="0 0 24 24">
+            <path d="M3.5 18.5L9.5 12.5L13.5 16.5L22 6.9L20.6 5.5L13.5 13.5L9.5 9.5L2 17L3.5 18.5Z"/>
+        </symbol>
+
+        <!-- Money Icon -->
+        <symbol id="icon-money" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.31 11.14C10.54 10.69 9.97 10.2 9.97 9.47C9.97 8.63 10.76 8.04 12.07 8.04C13.45 8.04 14.23 8.7 14.37 9.8H16.21C16.06 8.15 14.99 6.72 13.06 6.29V4.5H11.07V6.27C9.32 6.62 8 7.79 8 9.51C8 11.57 9.55 12.63 11.84 13.16C13.89 13.64 14.31 14.32 14.31 15.04C14.31 15.57 13.92 16.47 12.07 16.47C10.34 16.47 9.44 15.76 9.24 14.7H7.4C7.62 16.61 9.32 17.79 11.07 18.13V20H13.06V18.15C14.82 17.84 16.28 16.79 16.28 15.03C16.28 12.46 14.07 11.59 12.31 11.14Z"/>
+        </symbol>
+
+        <!-- Interest Icon -->
+        <symbol id="icon-interest" viewBox="0 0 24 24">
+            <path d="M11.8 10.9C9.53 10.31 8.8 9.7 8.8 8.75C8.8 7.66 9.81 6.9 11.5 6.9C13.28 6.9 14.94 7.75 15.12 9.05H17.5C17.27 7.09 15.77 5.45 13.5 5.02V3H9.5V4.96C7.35 5.32 5.5 6.71 5.5 8.77C5.5 11.24 7.5 12.66 10.35 13.35C12.93 13.98 13.5 14.93 13.5 15.83C13.5 16.5 13.05 17.6 11.5 17.6C9.76 17.6 8.66 16.71 8.4 15.33H6C6.3 17.8 8.12 19.13 10.5 19.49V21.5H14.5V19.54C16.67 19.22 18.5 17.98 18.5 15.82C18.5 12.76 16.1 11.74 11.8 10.9Z"/>
+        </symbol>
+    </svg>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -48,21 +74,21 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 ">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 bg-white">
                 <a href="#home" class="navbar-brand p-0">
-                    <h1 class="m-0">Step Up Grow</h1>
+                    <img src="img/logo.png" alt="Logo">
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="#home" class="nav-item nav-link active">Home</a>
-                        <a href="#packages" class="nav-item nav-link">Packages</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
-                        <a href="#service" class="nav-item nav-link">Service</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                    <div class="navbar-nav ms-auto py-0 ">
+                        <a href="#home" class="nav-item nav-link active text-primary">Home</a>
+                        <a href="#packages" class="nav-item nav-link text-primary">Packages</a>
+                        <a href="#about" class="nav-item nav-link text-primary">About</a>
+                        <a href="#service" class="nav-item nav-link text-primary">Service</a>
+                        <a href="#contact" class="nav-item nav-link text-primary">Contact</a>
 
                     </div>
                     <a href="#contact" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Login</a>
@@ -75,13 +101,16 @@
                     <div class="row g-5 align-items-center">
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated zoomIn">Invest With Confidence<br>Grow With Purpose</h1>
-                            <p class="text-white pb-3 animated zoomIn">Empower your financial future with Step Up Grow. We provide smart investment solutions to help you achieve long-term success.</p>
+                            <p class="text-white pb-3 animated zoomIn">Empower your financial future with Step Up Grow.
+                                We provide smart investment solutions to help you achieve long-term success.</p>
                             <ul class="text-white list-unstyled mb-4 animated fadeIn animated">
                                 <li><i class="fa-solid fa-chart-line me-2"></i>Personalized investment strategies</li>
                                 <li><i class="fa-solid fa-user-tie me-2"></i> Expert financial guidance</li>
                                 <li><i class="fa-solid fa-lock me-2"></i> Secure and transparent transactions</li>
                             </ul>
-                            <a href="" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Learn More</a>
+                            <a href=""
+                                class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Learn
+                                More</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
                             <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
@@ -103,7 +132,10 @@
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">About Us</div>
                         <h2 class="mb-4">About Step Up Grow</h2>
-                        <p class="mb-4">At Step Up Grow, we specialize in empowering individuals to achieve their financial goals through strategic investment solutions. With a focus on personalized service and expert guidance, we offer a wide range of investment opportunities including stocks, mutual funds, and alternative assets.</p>
+                        <p class="mb-4">At Step Up Grow, we specialize in empowering individuals to achieve their
+                            financial goals through strategic investment solutions. With a focus on personalized service
+                            and expert guidance, we offer a wide range of investment opportunities including stocks,
+                            mutual funds, and alternative assets.</p>
                         <div class="row g-3 mb-4">
                             <div class="col-12 d-flex">
                                 <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
@@ -111,7 +143,9 @@
                                 </div>
                                 <div class="ms-4">
                                     <h6>Expert Guidance</h6>
-                                    <span>Whether you're planning for retirement, building wealth, or managing a portfolio, Step Up Grow is your trusted partner in navigating the complex world of finance.</span>
+                                    <span>Whether you're planning for retirement, building wealth, or managing a
+                                        portfolio, Step Up Grow is your trusted partner in navigating the complex world
+                                        of finance.</span>
                                 </div>
                             </div>
                             <div class="col-12 d-flex">
@@ -120,7 +154,9 @@
                                 </div>
                                 <div class="ms-4">
                                     <h6>Strategic Solutions</h6>
-                                    <span>We provide comprehensive investment solutions with a focus on personalized service and expert guidance to help you achieve your financial goals with confidence and clarity.</span>
+                                    <span>We provide comprehensive investment solutions with a focus on personalized
+                                        service and expert guidance to help you achieve your financial goals with
+                                        confidence and clarity.</span>
                                 </div>
                             </div>
                             <div class="col-12 d-flex">
@@ -129,7 +165,9 @@
                                 </div>
                                 <div class="ms-4">
                                     <h6>Investment Management</h6>
-                                    <span>We collect funds from our clients and invest in the Indian market with diversification, specifically focusing on stocks, ETFs, and Index funds to generate optimal returns on investment.</span>
+                                    <span>We collect funds from our clients and invest in the Indian market with
+                                        diversification, specifically focusing on stocks, ETFs, and Index funds to
+                                        generate optimal returns on investment.</span>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +187,8 @@
                         <h3 class="text-white">Ready to get started</h3>
                         <small class="text-white">Welcome to Step Up Grow Family</small>
                         <div class="position-relative w-100 mt-3">
-                           <button class="btn btn-light rounded-pill text-primary py-1 px-4 "><a class="btn btn-link" href="#contact">Join Now</a></button>
+                            <button class="btn btn-light rounded-pill text-primary py-1 px-4 "><a class="btn btn-link"
+                                    href="#contact">Join Now</a></button>
                         </div>
                     </div>
                     <div class="col-md-6 text-center mb-n5 d-none d-md-block">
@@ -181,7 +220,8 @@
                             </div>
                             <div class="p-5">
                                 <h5 class="mb-3">Expert Investment Strategies</h5>
-                                <span>We leverage our expertise to maximize your returns and achieve your financial goals.</span>
+                                <span>We leverage our expertise to maximize your returns and achieve your financial
+                                    goals.</span>
                             </div>
                         </div>
                     </div>
@@ -229,7 +269,8 @@
                             </div>
                             <div class="p-5">
                                 <h5 class="mb-3">Diversified Portfolio</h5>
-                                <span>Strategic investment across stocks, ETFs, and Index funds in the Indian market for optimal risk management.</span>
+                                <span>Strategic investment across stocks, ETFs, and Index funds in the Indian market for
+                                    optimal risk management.</span>
                             </div>
                         </div>
                     </div>
@@ -245,7 +286,8 @@
                             </div>
                             <div class="p-5">
                                 <h5 class="mb-3">Secure Investments</h5>
-                                <span>Your investments are protected with robust security measures and transparent transactions.</span>
+                                <span>Your investments are protected with robust security measures and transparent
+                                    transactions.</span>
                             </div>
                         </div>
                     </div>
@@ -261,7 +303,8 @@
                             </div>
                             <div class="p-5">
                                 <h5 class="mb-3">Dedicated Support</h5>
-                                <span>Get personalized assistance and expert guidance throughout your investment journey.</span>
+                                <span>Get personalized assistance and expert guidance throughout your investment
+                                    journey.</span>
                             </div>
                         </div>
                     </div>
@@ -281,128 +324,726 @@
                 <!-- Investment Plan Tabs -->
                 <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-sip-tab" data-bs-toggle="pill" data-bs-target="#pills-sip" type="button" role="tab">SIP Plans</button>
+                        <button class="nav-link active" id="pills-sip-tab" data-bs-toggle="pill"
+                            data-bs-target="#sip-plans" type="button" role="tab">SIP Plans</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-onetime-tab" data-bs-toggle="pill" data-bs-target="#pills-onetime" type="button" role="tab">One Time Investment</button>
+                        <button class="nav-link" id="pills-onetime-tab" data-bs-toggle="pill"
+                            data-bs-target="#one-time" type="button" role="tab">One Time Investment</button>
                     </li>
                 </ul>
 
                 <!-- Tab Content -->
-                <div class="tab-content" id="pills-tabContent">
-                    <!-- SIP Plans Tab -->
-                    <div class="tab-pane fade show active" id="pills-sip" role="tabpanel">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="bg-primary text-white">
-                                    <tr>
-                                        <th>Monthly Investment</th>
-                                        <th>Time Period</th>
-                                        <th>ROI %</th>
-                                        <th>Interest Earned</th>
-                                        <th>Maturity Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>₹1,000</td>
-                                        <td>1 Year</td>
-                                        <td>12%</td>
-                                        <td>₹1,440</td>
-                                        <td>₹13,440</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹2,000</td>
-                                        <td>1 Year</td>
-                                        <td>12%</td>
-                                        <td>₹2,880</td>
-                                        <td>₹26,880</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹3,000</td>
-                                        <td>1 Year</td>
-                                        <td>12%</td>
-                                        <td>₹4,320</td>
-                                        <td>₹40,320</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹4,000</td>
-                                        <td>1 Year</td>
-                                        <td>12%</td>
-                                        <td>₹5,760</td>
-                                        <td>₹53,760</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹5,000</td>
-                                        <td>1 Year</td>
-                                        <td>12%</td>
-                                        <td>₹7,200</td>
-                                        <td>₹67,200</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div class="tab-content">
+                    <!-- SIP Plans -->
+                    <div class="tab-pane fade show active" id="sip-plans">
+                        <div class="row g-4">
+                            <!-- SIP Plan Card 1 (₹1,000) -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Monthly Investment</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹1,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">12%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹1,440</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Maturity Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹13,440</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SIP Plan Card 2 (₹2,000) -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Monthly Investment</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹2,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">12%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹2,880</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Maturity Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹26,880</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SIP Plan Card 3 (₹3,000) -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Monthly Investment</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹3,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">12%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹4,320</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Maturity Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹40,320</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SIP Plan Card 4 (₹4,000) -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Monthly Investment</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹4,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">12%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹5,760</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Maturity Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹53,760</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--sip plan card 6 (6000)-->
+
+                            
+
+                            <!-- SIP Plan Card 5 (₹5,000) -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Monthly Investment</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹5,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">12%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹7,200</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Maturity Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹67,200</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- SIP Plan Card 4 (₹4,000) -->
+                             <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Monthly Investment</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹6,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">12%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹8,640</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Maturity Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹80,640</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        
                     </div>
 
-                    <!-- One Time Investment Tab -->
-                    <div class="tab-pane fade" id="pills-onetime" role="tabpanel">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="bg-primary text-white">
-                                    <tr>
-                                        <th>Principal Amount</th>
-                                        <th>Time Period</th>
-                                        <th>ROI %</th>
-                                        <th>Interest Earned</th>
-                                        <th>Final Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>₹50,000</td>
-                                        <td>1 Year</td>
-                                        <td>14%</td>
-                                        <td>₹7,000</td>
-                                        <td>₹57,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹50,000</td>
-                                        <td>3 Year</td>
-                                        <td>33%</td>
-                                        <td>₹16,500</td>
-                                        <td>₹66,500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹100,000</td>
-                                        <td>1 Year</td>
-                                        <td>14%</td>
-                                        <td>₹14,000</td>
-                                        <td>₹114,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹100,000</td>
-                                        <td>3 Year</td>
-                                        <td>33%</td>
-                                        <td>₹33,000</td>
-                                        <td>₹133,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹500,000</td>
-                                        <td>1 Year</td>
-                                        <td>14%</td>
-                                        <td>₹70,000</td>
-                                        <td>₹570,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>₹500,000</td>
-                                        <td>3 Year</td>
-                                        <td>33%</td>
-                                        <td>₹165,000</td>
-                                        <td>₹665,000</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+<!--sip plan card 6 (6000)-->
+
+
+
+                    <!-- One Time Investment -->
+                    <div class="tab-pane fade" id="one-time">
+                        <div class="row g-4">
+                            <!-- One Time Investment Card 1 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Principal Amount</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹50,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">14%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹7,000</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Final Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹57,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Principal Amount</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹50,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">14%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹7,000</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Final Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹57,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Principal Amount</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹50,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">14%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹7,000</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Final Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹57,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Principal Amount</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹50,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">14%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹7,000</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Final Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹57,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Principal Amount</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹50,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">14%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹7,000</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Final Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹57,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card investment-card shadow-sm h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h6 class="text-muted mb-0">Principal Amount</h6>
+                                            <span class="amount-large" style="color: #7E38E4;">₹50,000</span>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-primary me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-clock" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">Period</div>
+                                                        <div class="fw-medium">1 Year</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="stat-icon bg-success me-3">
+                                                        <svg class="svg-icon-white">
+                                                            <use href="#icon-chart" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-muted small">ROI</div>
+                                                        <div class="roi-positive">14%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-3 border-top border-light">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Interest Earned</span>
+                                                        <span class="amount-medium" style="color: #7E38E4;">₹7,000</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="text-muted">Final Amount</span>
+                                                        <span class="amount-large" style="color: #7E38E4;">₹57,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- More One Time Investment Cards... -->
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -410,8 +1051,8 @@
         <!-- Investment Packages End -->
 
 
-          <!-- SIP Calculator Start -->
-          <div class="container-xxl py-6" id="calculator">
+        <!-- SIP Calculator Start -->
+        <div class="container-xxl py-6" id="calculator">
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Calculator</div>
@@ -421,10 +1062,12 @@
                 <!-- Investment Type Tabs -->
                 <ul class="nav nav-pills mb-4 justify-content-center" id="calculator-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="sip-tab" data-bs-toggle="pill" data-bs-target="#sip-calc" type="button" role="tab">SIP Calculator</button>
+                        <button class="nav-link active" id="sip-tab" data-bs-toggle="pill" data-bs-target="#sip-calc"
+                            type="button" role="tab">SIP Calculator</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="onetime-tab" data-bs-toggle="pill" data-bs-target="#onetime-calc" type="button" role="tab">One Time Investment</button>
+                        <button class="nav-link" id="onetime-tab" data-bs-toggle="pill" data-bs-target="#onetime-calc"
+                            type="button" role="tab">One Time Investment</button>
                     </li>
                 </ul>
 
@@ -440,24 +1083,28 @@
                                             <div class="row g-3">
                                                 <div class="col-12">
                                                     <div class="form-floating">
-                                                        <input type="number" class="form-control" id="monthlyInvestment" placeholder="Monthly Investment" required>
+                                                        <input type="number" class="form-control" id="monthlyInvestment"
+                                                            placeholder="Monthly Investment" required>
                                                         <label for="monthlyInvestment">Monthly Investment (₹)</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input type="number" class="form-control" id="timePeriod" placeholder="Time Period" required>
+                                                        <input type="number" class="form-control" id="timePeriod"
+                                                            placeholder="Time Period" required>
                                                         <label for="timePeriod">Time Period (Years)</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input type="number" class="form-control" id="expectedReturn" placeholder="Expected Return" required>
+                                                        <input type="number" class="form-control" id="expectedReturn"
+                                                            placeholder="Expected Return" required>
                                                         <label for="expectedReturn">Expected Return (%)</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button type="button" class="btn btn-primary rounded-pill py-3 px-5" onclick="calculateSIP()">Calculate</button>
+                                                    <button type="button" class="btn btn-primary rounded-pill py-3 px-5"
+                                                        onclick="calculateSIP()">Calculate</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -497,24 +1144,29 @@
                                             <div class="row g-3">
                                                 <div class="col-12">
                                                     <div class="form-floating">
-                                                        <input type="number" class="form-control" id="principalAmount" placeholder="Principal Amount" required>
+                                                        <input type="number" class="form-control" id="principalAmount"
+                                                            placeholder="Principal Amount" required>
                                                         <label for="principalAmount">Principal Amount (₹)</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input type="number" class="form-control" id="onetimeTimePeriod" placeholder="Time Period" required>
+                                                        <input type="number" class="form-control" id="onetimeTimePeriod"
+                                                            placeholder="Time Period" required>
                                                         <label for="onetimeTimePeriod">Time Period (Years)</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input type="number" class="form-control" id="onetimeExpectedReturn" placeholder="Expected Return" required>
+                                                        <input type="number" class="form-control"
+                                                            id="onetimeExpectedReturn" placeholder="Expected Return"
+                                                            required>
                                                         <label for="onetimeExpectedReturn">Expected Return (%)</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button type="button" class="btn btn-primary rounded-pill py-3 px-5" onclick="calculateOneTime()">Calculate</button>
+                                                    <button type="button" class="btn btn-primary rounded-pill py-3 px-5"
+                                                        onclick="calculateOneTime()">Calculate</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -558,7 +1210,9 @@
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                     <div class="testimonial-item rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>"Step Up Grow has transformed my investment journey. Their expert guidance helped me achieve a 14% return in just one year. Their transparent approach and regular updates keep me confident about my financial future."</p>
+                        <p>"Step Up Grow has transformed my investment journey. Their expert guidance helped me achieve
+                            a 14% return in just one year. Their transparent approach and regular updates keep me
+                            confident about my financial future."</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-3">
                                 <h6 class="mb-1">Satyam Pawar</h6>
@@ -568,7 +1222,9 @@
                     </div>
                     <div class="testimonial-item rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>"As a first-time investor, I was nervous about market investments. Step Up Grow's team made it simple and accessible. Their SIP plans are perfect for beginners, and their support team is always there to help."</p>
+                        <p>"As a first-time investor, I was nervous about market investments. Step Up Grow's team made
+                            it simple and accessible. Their SIP plans are perfect for beginners, and their support team
+                            is always there to help."</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-3">
                                 <h6 class="mb-1">Samruddhi Kakad</h6>
@@ -578,7 +1234,9 @@
                     </div>
                     <div class="testimonial-item rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>"The diversification strategy suggested by Step Up Grow has significantly reduced my portfolio risk while maintaining strong returns. Their expertise in the Indian market is truly impressive."</p>
+                        <p>"The diversification strategy suggested by Step Up Grow has significantly reduced my
+                            portfolio risk while maintaining strong returns. Their expertise in the Indian market is
+                            truly impressive."</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-3">
                                 <h6 class="mb-1">Darshan Gada</h6>
@@ -588,7 +1246,9 @@
                     </div>
                     <div class="testimonial-item rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>"I've been investing with Step Up Grow for three years now. Their long-term investment plans have given me returns exceeding 33%. Their professional approach and market insights are exceptional."</p>
+                        <p>"I've been investing with Step Up Grow for three years now. Their long-term investment plans
+                            have given me returns exceeding 33%. Their professional approach and market insights are
+                            exceptional."</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-3">
                                 <h6 class="mb-1">Rutuja Vangule</h6>
@@ -614,19 +1274,22 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                            required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                            required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone" required>
+                                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone"
+                                            required>
                                         <label for="phone">Your Phone</label>
                                     </div>
                                 </div>
@@ -642,14 +1305,15 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message"
+                                            style="height: 150px" required></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" data-sitekey="6LdceM0qAAAAAHf7_AZ0x320y_pRqVAsaE7SmmII" 
-                                    data-callback='onSubmit' 
-                                    data-action='submit_enquiry' type="submit" id="submitBtn">Send Message</button>
+                                    <button class="btn btn-primary rounded-pill py-3 px-5"
+                                        data-sitekey="6LdceM0qAAAAAHf7_AZ0x320y_pRqVAsaE7SmmII" data-callback='onSubmit'
+                                        data-action='submit_enquiry' type="submit" id="submitBtn">Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -660,16 +1324,17 @@
         <!-- Contact End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;" id="footer">
+        <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s"
+            style="margin-top: 6rem;" id="footer">
             <div class="container py-4">
-                <div class="row g-4"  id="fotter_first">
+                <div class="row g-4" id="fotter_first">
                     <!-- Column 1 -->
                     <div class="col-md-6 col-lg-4">
                         <h5 class="text-white mb-3">Step Up Grow</h5>
                         <p class="mb-2">Empowering your financial future through strategic investments</p>
                         <p class="mb-1">UDYAM-MH-33-0506992</p>
                     </div>
-                    
+
                     <!-- Column 2 -->
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-3">Quick Links</h5>
@@ -679,7 +1344,7 @@
                         <a class="btn btn-link px-0 py-1" href="#packages">Packages</a>
                         <a class="btn btn-link px-0 py-1" href="#contact">Contact</a>
                     </div>
-                    
+
                     <!-- Column 3 -->
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-3">Contact Information</h5>
@@ -696,13 +1361,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Copyright Section -->
             <div class="container">
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-12 text-center mb-3 mb-md-0">
-                            &copy; 2023 Step Up Grow. All rights reserved.
+                            <img src="img/logo.png" alt="Logo" style="height: 40px;">
                         </div>
                     </div>
                 </div>
