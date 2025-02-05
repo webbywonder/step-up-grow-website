@@ -31,6 +31,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- reCAPTCHA Script - Single Implementation -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdceM0qAAAAAHf7_AZ0x320y_pRqVAsaE7SmmII" async defer></script>
 </head>
 
 <body>
@@ -147,7 +149,7 @@
                         <h3 class="text-white">Ready to get started</h3>
                         <small class="text-white">Welcome to Step Up Grow Family</small>
                         <div class="position-relative w-100 mt-3">
-                           <button class="btn btn-light rounded-pill text-primary py-1 px-4 ms-lg-5"><a class="btn btn-link" href="#contact">Join Now</a></button>
+                           <button class="btn btn-light rounded-pill text-primary py-1 px-4 "><a class="btn btn-link" href="#contact">Join Now</a></button>
                         </div>
                     </div>
                     <div class="col-md-6 text-center mb-n5 d-none d-md-block">
@@ -407,117 +409,9 @@
         </div>
         <!-- Investment Packages End -->
 
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-6" id="testimonial">
-            <div class="container">
-                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Testimonial</div>
-                    <h2 class="mb-5">What Our Clients Say!</h2>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>"Step Up Grow has transformed my investment journey. Their expert guidance helped me achieve a 14% return in just one year. Their transparent approach and regular updates keep me confident about my financial future."</p>
-                        <div class="d-flex align-items-center">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Satyam Pawar</h6>
-                                <small>IT Professional</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>"As a first-time investor, I was nervous about market investments. Step Up Grow's team made it simple and accessible. Their SIP plans are perfect for beginners, and their support team is always there to help."</p>
-                        <div class="d-flex align-items-center">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Samruddhi Kakad</h6>
-                                <small>Senior Manager</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>"The diversification strategy suggested by Step Up Grow has significantly reduced my portfolio risk while maintaining strong returns. Their expertise in the Indian market is truly impressive."</p>
-                        <div class="d-flex align-items-center">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Darshan Gada</h6>
-                                <small>Business Owner</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>"I've been investing with Step Up Grow for three years now. Their long-term investment plans have given me returns exceeding 33%. Their professional approach and market insights are exceptional."</p>
-                        <div class="d-flex align-items-center">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Rutuja Vangule</h6>
-                                <small>Doctor</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
 
-        <!-- Contact Start -->
-        <div class="container-xxl py-6" id="contact">
-            <div class="container">
-                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Contact Us</div>
-                    <h2 class="mb-5">Get in Touch With Us</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone" required>
-                                        <label for="phone">Your Phone</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="enquiryType" required>
-                                            <option value="" selected disabled>Select Enquiry Type</option>
-                                            <option value="package">Package Inquiry</option>
-                                            <option value="contact">Contact</option>
-                                        </select>
-                                        <label for="enquiryType">Enquiry Type</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Contact End -->
-
-        <!-- SIP Calculator Start -->
-        <div class="container-xxl py-6" id="calculator">
+          <!-- SIP Calculator Start -->
+          <div class="container-xxl py-6" id="calculator">
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Calculator</div>
@@ -654,29 +548,145 @@
         </div>
         <!-- SIP Calculator End -->
 
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-6" id="testimonial">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Testimonial</div>
+                    <h2 class="mb-5">What Our Clients Say!</h2>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>"Step Up Grow has transformed my investment journey. Their expert guidance helped me achieve a 14% return in just one year. Their transparent approach and regular updates keep me confident about my financial future."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h6 class="mb-1">Satyam Pawar</h6>
+                                <small>IT Professional</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>"As a first-time investor, I was nervous about market investments. Step Up Grow's team made it simple and accessible. Their SIP plans are perfect for beginners, and their support team is always there to help."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h6 class="mb-1">Samruddhi Kakad</h6>
+                                <small>Senior Manager</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>"The diversification strategy suggested by Step Up Grow has significantly reduced my portfolio risk while maintaining strong returns. Their expertise in the Indian market is truly impressive."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h6 class="mb-1">Darshan Gada</h6>
+                                <small>Business Owner</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>"I've been investing with Step Up Grow for three years now. Their long-term investment plans have given me returns exceeding 33%. Their professional approach and market insights are exceptional."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h6 class="mb-1">Rutuja Vangule</h6>
+                                <small>Doctor</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+        <!-- Contact Start -->
+        <div class="container-xxl py-6" id="contact">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Contact Us</div>
+                    <h2 class="mb-5">Get in Touch With Us</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone" required>
+                                        <label for="phone">Your Phone</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="enquiryType" required>
+                                            <option value="" selected disabled>Select Enquiry Type</option>
+                                            <option value="package">Package Inquiry</option>
+                                            <option value="contact">Contact</option>
+                                        </select>
+                                        <label for="enquiryType">Enquiry Type</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary rounded-pill py-3 px-5" data-sitekey="6LdceM0qAAAAAHf7_AZ0x320y_pRqVAsaE7SmmII" 
+                                    data-callback='onSubmit' 
+                                    data-action='submit_enquiry' type="submit" id="submitBtn">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;" id="footer">
-            <div class="container py-5">
-                <div class="row g-5">
+            <div class="container py-4">
+                <div class="row g-4"  id="fotter_first">
+                    <!-- Column 1 -->
                     <div class="col-md-6 col-lg-4">
-                        <h5 class="text-white mb-4">Step Up Grow</h5>
-                        <p>Empowering your financial future through strategic investments</p>
-                        <p class="mb-2">UDYAM-MH-33-0506992</p>
+                        <h5 class="text-white mb-3">Step Up Grow</h5>
+                        <p class="mb-2">Empowering your financial future through strategic investments</p>
+                        <p class="mb-1">UDYAM-MH-33-0506992</p>
                     </div>
+                    
+                    <!-- Column 2 -->
                     <div class="col-md-6 col-lg-3">
-                        <h5 class="text-white mb-4">Quick Links</h5>
-                        <a class="btn btn-link" href="#home">Home</a>
-                        <a class="btn btn-link" href="#about">About</a>
-                        <a class="btn btn-link" href="#service">Services</a>
-                        <a class="btn btn-link" href="#packages">Packages</a>
-                        <a class="btn btn-link" href="#contact">Contact</a>
+                        <h5 class="text-white mb-3">Quick Links</h5>
+                        <a class="btn btn-link px-0 py-1" href="#home">Home</a>
+                        <a class="btn btn-link px-0 py-1" href="#about">About</a>
+                        <a class="btn btn-link px-0 py-1" href="#service">Services</a>
+                        <a class="btn btn-link px-0 py-1" href="#packages">Packages</a>
+                        <a class="btn btn-link px-0 py-1" href="#contact">Contact</a>
                     </div>
+                    
+                    <!-- Column 3 -->
                     <div class="col-md-6 col-lg-3">
-                        <h5 class="text-white mb-4">Contact Information</h5>
-                        <p>Room no 1 Venkata Lane</p>
-                        <p>Panchavati Mini Road (E) Thane 401107</p>
-                        <p>Email: stepupgrow1@gmail.com</p>
-                        <p>Phone: 9321593269</p>
+                        <h5 class="text-white mb-3">Contact Information</h5>
+                        <p class="mb-1">Room no 1 Venkata Lane</p>
+                        <p class="mb-1">Panchavati Mini Road (E) Thane 401107</p>
+                        <p class="mb-1">Email: stepupgrow1@gmail.com</p>
+                        <p class="mb-1">Phone: 9321593269</p>
                     </div>
                     <div class="col-md-6 col-lg-2">
                         <h5 class="text-white mb-4">Legal</h5>
@@ -686,6 +696,8 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Copyright Section -->
             <div class="container">
                 <div class="copyright">
                     <div class="row">

@@ -193,10 +193,21 @@ function calculateOneTime() {
 
     // Contact form submission handler
     document.addEventListener('DOMContentLoaded', function() {
-        const contactForm = document.querySelector('#contact form');
+        const contactForm = document.querySelector('#contactForm');
         if (contactForm) {
+            // Add error message container after form creation
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger d-none';
+            errorDiv.id = 'formError';
+            submitButton.parentNode.insertBefore(errorDiv, submitButton);
+
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
+
+                // Clear previous error messages
+                errorDiv.classList.add('d-none');
+                errorDiv.textContent = '';
 
                 // Show loading state
                 const submitButton = this.querySelector('button[type="submit"]');
@@ -204,16 +215,39 @@ function calculateOneTime() {
                 submitButton.innerHTML = 'Sending...';
                 submitButton.disabled = true;
 
-                // Get form values and map enquiryType to the expected type format
-                const formData = {
-                    name: document.getElementById('name').value.trim(),
-                    email: document.getElementById('email').value.trim(),
-                    phone: document.getElementById('phone').value.trim(),
-                    type: document.getElementById('enquiryType').value === 'package' ? 'PACKAGE_INQUIRY' : 'CONTACT',
-                    message: document.getElementById('message').value.trim()
-                };
-
                 try {
+                    // Execute reCAPTCHA and get token
+                    const recaptchaToken = await grecaptcha.execute('6LdceM0qAAAAAHf7_AZ0x320y_pRqVAsaE7SmmII', {
+                        action: 'submit_enquiry'
+                    });
+
+                    // Get form values
+                    const formData = {
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        type: document.getElementById('enquiryType').value === 'package' ? 'PACKAGE_INQUIRY' : 'CONTACT',
+                        message: document.getElementById('message').value.trim(),
+                        recaptchaToken
+                    };
+
+                    // Form validation
+                    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+                        throw new Error('Please fill in all required fields');
+                    }
+
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(formData.email)) {
+                        throw new Error('Please enter a valid email address');
+                    }
+
+                    // Phone validation (Indian format)
+                    const phoneRegex = /^[6-9]\d{9}$/;
+                    if (!phoneRegex.test(formData.phone)) {
+                        throw new Error('Please enter a valid 10-digit Indian phone number');
+                    }
+
                     const response = await fetch('http://localhost:5000/api/enquiries', {
                         method: 'POST',
                         headers: {
@@ -223,16 +257,20 @@ function calculateOneTime() {
                     });
 
                     const data = await response.json();
-
-                    if (response.ok) {
-                        alert('Thank you! Your message has been sent successfully.');
-                        contactForm.reset();
-                    } else {
-                        throw new Error(data.message || 'Failed to send message');
+                    
+                    if (!response.ok) {
+                        throw new Error(data.error || data.message || 'Failed to send message');
                     }
+
+                    // Show success message
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+
                 } catch (error) {
+                    // Show error message in the error div
+                    errorDiv.textContent = error.message;
+                    errorDiv.classList.remove('d-none');
                     console.error('Error:', error);
-                    alert('Failed to send message. Please try again later.');
                 } finally {
                     // Restore button state
                     submitButton.innerHTML = originalButtonText;
