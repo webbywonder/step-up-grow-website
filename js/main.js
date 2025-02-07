@@ -61,10 +61,8 @@ function calculateOneTime() {
 // Update the fetchPackages function
 async function fetchPackages() {
     try {
-        console.log('Fetching packages...');
         const response = await fetch(`${apiURL}/packages/public`);
         const packages = await response.json();
-        console.log('Packages data:', packages);
 
         // Separate SIP and ONE_TIME packages
         const sipPackages = packages.filter(pkg => pkg.type === 'SIP');
