@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "sass": "sass scss/bootstrap.scss:css/bootstrap.min.css --style compressed",
+    "sass:watch": "sass --watch scss/bootstrap.scss:css/bootstrap.min.css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}
