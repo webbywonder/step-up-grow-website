@@ -705,20 +705,18 @@
 .div {
     max-width: 700px;
 
-    /* background: #fff; */
     padding: 30px;
     margin: 40px auto;
-    /* border-radius: 8px; */
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
+ 
 }
 
-h1 {
+.head {
     text-align: center;
     margin-bottom: 20px;
 
 }
 
-h2 {
+.sub_head {
 
     margin-top: 20px;
     padding-bottom: 5px;
