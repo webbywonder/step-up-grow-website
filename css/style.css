@@ -701,3 +701,37 @@
     font-size: 10px;
     color: #c9c9c9;
 }
+
+.div {
+    max-width: 700px;
+
+    /* background: #fff; */
+    padding: 30px;
+    margin: 40px auto;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+h2 {
+
+    margin-top: 20px;
+    padding-bottom: 5px;
+    font-size: 24px;
+}
+
+.div ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.div li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
