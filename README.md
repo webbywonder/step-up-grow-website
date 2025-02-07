@@ -49,12 +49,6 @@ This platform can be used for:
 - Investment calculations and planning
 - Client communication through contact form
 
-## Contact Information
-
-- Email: stepupgrow1@gmail.com
-- Phone: 7400440939
-- Address: Office No 2 Narhari Mhatre Lane, Near BMC School Penkarpada Mira Road (E) Thane 401107
-
 ## Legal Documents
 
 - Terms of Service
