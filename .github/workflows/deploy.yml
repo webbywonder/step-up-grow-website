@@ -23,3 +23,7 @@ jobs:
           bash
           cd ~/step-up-grow-website
           git pull origin main
+          # Update API URL to production
+          sed -i 's|http://localhost:5000/api|https://api.stepupgrow.in/api|g' js/main.js
+          # Update Login URL to production
+          sed -i 's|http://localhost:5173|https://app.stepupgrow.in|g' index.html
