@@ -692,3 +692,12 @@
 }
 
 
+.footer-logo {
+    height: 150px;
+    margin-left: -10px;
+}
+
+.text-12 {
+    font-size: 10px;
+    color: #c9c9c9;
+}

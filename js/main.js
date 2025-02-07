@@ -1,4 +1,5 @@
 var apiURL = "http://localhost:5000/api";
+
 function calculateSIP() {
     // Get input values
     const monthlyInvestment = parseFloat(document.getElementById('monthlyInvestment').value);
@@ -435,5 +436,6 @@ async function fetchPackages() {
 
     fetchPackages();
 
-})(jQuery);
+    $('#year').text(new Date().getFullYear());
 
+})(jQuery);
