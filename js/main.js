@@ -68,6 +68,31 @@ async function fetchPackages() {
         const sipPackages = packages.filter(pkg => pkg.type === 'SIP');
         const oneTimePackages = packages.filter(pkg => pkg.type === 'ONE_TIME');
 
+        // Get unique time periods for each package type
+        const sipTimePeriods = [...new Set(sipPackages.map(pkg => pkg.timePeriod))].sort((a, b) => a - b);
+        const oneTimeTimePeriods = [...new Set(oneTimePackages.map(pkg => pkg.timePeriod))].sort((a, b) => a - b);
+
+        // Generate tabs HTML dynamically based on available periods
+        const sipTabsHtml = `
+            <ul class="nav nav-pills mb-4 justify-content-center" id="sip-time-tabs" role="tablist">
+                ${sipTimePeriods.map((period, index) => `
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link ${index === 0 ? 'active' : ''}" data-period="${period}" type="button">${period} Year${period > 1 ? 's' : ''}</button>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+
+        const oneTimeTabsHtml = `
+            <ul class="nav nav-pills mb-4 justify-content-center" id="onetime-time-tabs" role="tablist">
+                ${oneTimeTimePeriods.map((period, index) => `
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link ${index === 0 ? 'active' : ''}" data-period="${period}" type="button">${period} Year${period > 1 ? 's' : ''}</button>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+
         // Get container elements
         const sipContainer = document.querySelector('#sip-plans .row');
         const oneTimeContainer = document.querySelector('#one-time .row');
@@ -77,162 +102,119 @@ async function fetchPackages() {
             return;
         }
 
-        // Clear existing content
-        sipContainer.innerHTML = '';
-        oneTimeContainer.innerHTML = '';
+        // Remove existing tabs if any
+        const existingSipTabs = document.querySelector('#sip-time-tabs');
+        const existingOneTimeTabs = document.querySelector('#onetime-time-tabs');
+        if (existingSipTabs) existingSipTabs.remove();
+        if (existingOneTimeTabs) existingOneTimeTabs.remove();
 
-        // Create and populate SIP cards
-        sipPackages.forEach(plan => {
-            // Get values from the plan object
-            const monthlyInvestment = parseInt(plan.amount);
-            const timePeriod = plan.timePeriod;
-            const expectedReturn = plan.roi || plan.percentageChange || 12; // Fallback to 12%
+        // Add tabs before containers
+        sipContainer.insertAdjacentHTML('beforebegin', sipTabsHtml);
+        oneTimeContainer.insertAdjacentHTML('beforebegin', oneTimeTabsHtml);
 
-            // Get pre-calculated returns from the API
-            const interestEarned = plan.returns?.interest || 0;
-            const maturityAmount = plan.returns?.maturityAmount || 0;
-            const totalInvestment = plan.returns?.totalInvestment || 0;
+        // Function to render packages based on time period
+        function renderPackages(packages, container, period) {
+            container.innerHTML = '';
+            const filteredPackages = packages.filter(pkg => pkg.timePeriod === period);
+            
+            filteredPackages.forEach(plan => {
+                // Get values from the plan object
+                const amount = parseInt(plan.amount);
+                const timePeriod = plan.timePeriod;
+                const expectedReturn = plan.roi || plan.percentageChange || (plan.type === 'SIP' ? 12 : 14);
+                const interestEarned = plan.returns?.interest || 0;
+                const maturityAmount = plan.returns?.maturityAmount || 0;
 
-            const cardHtml = `
-                <div class="col-md-6 col-lg-4">
-                    <div class="card investment-card shadow-sm h-100">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h6 class="text-muted mb-0">Monthly Investment</h6>
-                                <span class="amount-large" style="color: #7E38E4;">₹${monthlyInvestment.toLocaleString('en-IN')}</span>
-                            </div>
+                const cardHtml = `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card investment-card shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h6 class="text-muted mb-0">${plan.type === 'SIP' ? 'Monthly Investment' : 'Principal Amount'}</h6>
+                                    <span class="amount-large" style="color: #7E38E4;">₹${amount.toLocaleString('en-IN')}</span>
+                                </div>
 
-                            <div class="row g-3 mb-4">
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <div class="stat-icon bg-primary me-3">
-                                            <svg class="svg-icon-white">
-                                                <use href="#icon-clock" />
-                                            </svg>
+                                <div class="row g-3 mb-4">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="stat-icon bg-primary me-3">
+                                                <svg class="svg-icon-white">
+                                                    <use href="#icon-clock" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-muted small">Period</div>
+                                                <div class="fw-medium">${timePeriod} Year</div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <div class="text-muted small">Period</div>
-                                            <div class="fw-medium">${timePeriod} Year</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="stat-icon bg-success me-3">
+                                                <svg class="svg-icon-white">
+                                                    <use href="#icon-chart" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-muted small">ROI</div>
+                                                <div class="roi-positive">${expectedReturn}%</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <div class="stat-icon bg-success me-3">
-                                            <svg class="svg-icon-white">
-                                                <use href="#icon-chart" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted small">ROI</div>
-                                            <div class="roi-positive">${expectedReturn}%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="pt-3 border-top border-light">
-                                <div class="row">
-                                    <div class="col-12 mb-3">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-muted">Interest Earned</span>
-                                            <span class="amount-medium" style="color: #7E38E4;">
-                                                ₹${Math.round(interestEarned).toLocaleString('en-IN')}
-                                            </span>
+                                <div class="pt-3 border-top border-light">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="text-muted">Interest Earned</span>
+                                                <span class="amount-medium" style="color: #7E38E4;">
+                                                    ₹${Math.round(interestEarned).toLocaleString('en-IN')}
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-muted">Maturity Amount</span>
-                                            <span class="amount-large" style="color: #7E38E4;">
-                                                ₹${Math.round(maturityAmount).toLocaleString('en-IN')}
-                                            </span>
+                                        <div class="col-12">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="text-muted">${plan.type === 'SIP' ? 'Maturity Amount' : 'Final Amount'}</span>
+                                                <span class="amount-large" style="color: #7E38E4;">
+                                                    ₹${Math.round(maturityAmount).toLocaleString('en-IN')}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            `;
-            sipContainer.insertAdjacentHTML('beforeend', cardHtml);
+                `;
+                container.insertAdjacentHTML('afterbegin', cardHtml);
+            });
+        }
+
+        // Initial render with first available period
+        renderPackages(sipPackages, sipContainer, sipTimePeriods[0]);
+        renderPackages(oneTimePackages, oneTimeContainer, oneTimeTimePeriods[0]);
+
+        // Add click handlers for SIP tabs
+        document.querySelectorAll('#sip-time-tabs .nav-link').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('#sip-time-tabs .nav-link').forEach(t => 
+                    t.classList.remove('active'));
+                e.target.classList.add('active');
+                const period = parseInt(e.target.dataset.period);
+                renderPackages(sipPackages, sipContainer, period);
+            });
         });
 
-        // Create and populate ONE_TIME cards
-        oneTimePackages.forEach(plan => {
-            // Get values from the plan object
-            const principalAmount = parseInt(plan.amount);
-            const timePeriod = plan.timePeriod;
-            const expectedReturn = plan.roi || plan.percentageChange || 14; // Fallback to 14%
-
-            // Get pre-calculated returns from the API
-            const interestEarned = plan.returns?.interest || 0;
-            const maturityAmount = plan.returns?.maturityAmount || 0;
-            const totalInvestment = plan.returns?.totalInvestment || 0;
-
-            const cardHtml = `
-                <div class="col-md-6 col-lg-4">
-                    <div class="card investment-card shadow-sm h-100">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h6 class="text-muted mb-0">Principal Amount</h6>
-                                <span class="amount-large" style="color: #7E38E4;">₹${principalAmount.toLocaleString('en-IN')}</span>
-                            </div>
-
-                            <div class="row g-3 mb-4">
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <div class="stat-icon bg-primary me-3">
-                                            <svg class="svg-icon-white">
-                                                <use href="#icon-clock" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted small">Period</div>
-                                            <div class="fw-medium">${timePeriod} Year</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <div class="stat-icon bg-success me-3">
-                                            <svg class="svg-icon-white">
-                                                <use href="#icon-chart" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted small">ROI</div>
-                                            <div class="roi-positive">${expectedReturn}%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pt-3 border-top border-light">
-                                <div class="row">
-                                    <div class="col-12 mb-3">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-muted">Interest Earned</span>
-                                            <span class="amount-medium" style="color: #7E38E4;">
-                                                ₹${Math.round(interestEarned).toLocaleString('en-IN')}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-muted">Final Amount</span>
-                                            <span class="amount-large" style="color: #7E38E4;">
-                                                ₹${Math.round(maturityAmount).toLocaleString('en-IN')}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            oneTimeContainer.insertAdjacentHTML('beforeend', cardHtml);
+        // Add click handlers for one-time tabs
+        document.querySelectorAll('#onetime-time-tabs .nav-link').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('#onetime-time-tabs .nav-link').forEach(t => 
+                    t.classList.remove('active'));
+                e.target.classList.add('active');
+                const period = parseInt(e.target.dataset.period);
+                renderPackages(oneTimePackages, oneTimeContainer, period);
+            });
         });
 
     } catch (error) {

@@ -5,6 +5,10 @@
     --dark: #0E2E50;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -566,11 +570,11 @@
 /* Investment Plan Tabs Styling */
 #packages .nav-pills {
     gap: 10px;
-    margin-bottom: 30px !important;
+    margin-bottom: 30px;
 }
 
 #packages .nav-pills .nav-link {
-    padding: 10px 30px;
+    padding: 8px 24px;
     border-radius: 30px;
     color: var(--primary);
     background: transparent;
@@ -732,4 +736,15 @@
 .div li {
     margin-bottom: 10px;
     line-height: 1.6;
+}
+
+#login-btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(126, 56, 228, 0.2);
+}
+
+#login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(126, 56, 228, 0.3);
+    background-color: #6a2ec4; /* Slightly darker shade on hover */
 }
