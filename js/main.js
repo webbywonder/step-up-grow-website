@@ -121,7 +121,12 @@ async function fetchPackages() {
                 // Get values from the plan object
                 const amount = parseInt(plan.amount);
                 const timePeriod = plan.timePeriod;
-                const expectedReturn = plan.roi || plan.percentageChange || (plan.type === 'SIP' ? 12 : 14);
+                const baseReturn = plan.roi || plan.percentageChange || (plan.type === 'SIP' ? 12 : 14);
+                // Calculate expected return based on investment type
+                const expectedReturn = plan.type === 'ONE_TIME' ? 
+                    baseReturn * timePeriod : 
+                    baseReturn;
+                
                 const interestEarned = plan.returns?.interest || 0;
                 const maturityAmount = plan.returns?.maturityAmount || 0;
 
