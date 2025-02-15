@@ -32,22 +32,19 @@ function calculateSIP() {
 }
 
 function calculateOneTime() {
-
     const principalAmount = parseFloat(document.getElementById('principalAmount').value);
     const onetimeTimePeriod = parseFloat(document.getElementById('onetimeTimePeriod').value);
     const onetimeExpectedReturn = parseFloat(document.getElementById('onetimeExpectedReturn').value);
-
 
     if (!principalAmount || !onetimeTimePeriod || !onetimeExpectedReturn) {
         alert('Please fill in all fields with valid numbers');
         return;
     }
 
-
     const totalInvestment = principalAmount;
-    const maturityAmount = totalInvestment * Math.pow(1 + (onetimeExpectedReturn / 100), onetimeTimePeriod);
-    const totalReturns = maturityAmount - totalInvestment;
-
+    // Calculate interest earned using simple interest: Principal * Rate * Time
+    const totalReturns = totalInvestment * (onetimeExpectedReturn / 100);
+    const maturityAmount = totalInvestment + totalReturns;
 
     document.getElementById('onetimeResult').style.display = 'block';
     document.getElementById('onetimeTotalInvestment').textContent =
